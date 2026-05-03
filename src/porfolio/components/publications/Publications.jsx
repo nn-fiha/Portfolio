@@ -8,15 +8,16 @@ const Publications = () => {
 
   return (
     <section id='publications' className='p-8 mb-10 md:mb-20'>
-      <h2 className='text-2xl font-bold text-center ml-2 md:ml-0'>Publications</h2> 
-      <span className='text-xs text-gray-500 text-center ml-2 md:ml-0'>Papers</span>
+      <h2 className='text-2xl font-bold text-center ml-2 md:ml-0 dark:text-white'>Publications</h2>
+      <span className='block text-xs text-gray-500 dark:text-slate-400 text-center ml-2 md:ml-0 mb-12'>Papers</span>
 
-      <div className="border-l-4 border-s-slate-600 bg-white shadow-md rounded-lg p-4 flex flex-col gap-2 w-full max-w-6xl mt-6 md:ml-40">
-        <p className="text-gray-800 font-normal text-left">
-          <a href="https://ieeexplore.ieee.org/abstract/document/10914454" className="hover:underline text-blue-600 font-semibold">
+      <div className='max-w-5xl mx-auto md:px-8'>
+      <div className="border-l-4 border-s-slate-600 dark:border-s-slate-400 bg-white dark:bg-slate-900 shadow-md rounded-lg p-4 flex flex-col gap-2">
+        <p className="text-gray-800 dark:text-slate-300 font-normal text-left">
+          <a href="https://ieeexplore.ieee.org/abstract/document/10914454" className="hover:underline text-blue-600 dark:text-blue-400 font-semibold">
             Deep Learning Based Bangladeshi Currency Coin Recognition.
-          </a> Serajum Monira, <strong>Nurun Nahar Fiha</strong>, Md. Golam Moazzam, Md. Musfique Anwar. 
-          <i className='text-sm'> 4th International Conference on Robotics, Electrical and Signal Processing Techniques 2025 (4th ICREST’25)</i>   
+          </a> Serajum Monira, <strong className='dark:text-white'>Nurun Nahar Fiha</strong>, Md. Golam Moazzam, Md. Musfique Anwar.
+          <i className='text-sm'> 4th International Conference on Robotics, Electrical and Signal Processing Techniques 2025 (4th ICREST’25)</i>
         </p>
 
         <div className="flex justify-between gap-2 mt-2">
@@ -25,37 +26,38 @@ const Publications = () => {
           </div>
           <div>
             {/* Open Modal Button */}
-            <button 
+            <button
               onClick={openModal}
-              className="border border-green-700 text-green-700 px-3 py-1 mr-2 text-sm rounded-md hover:bg-green-700 hover:text-white"
+              className="border border-green-700 text-green-700 dark:border-green-400 dark:text-green-400 px-3 py-1 mr-2 text-sm rounded-md hover:bg-green-700 hover:text-white dark:hover:bg-green-500 dark:hover:text-white"
               type="button"
             >
               <i className='bx bxs-quote-single-right'></i> Citation
             </button>
 
-            <a href="https://ieeexplore.ieee.org/abstract/document/10914454" className="border border-blue-700 text-blue-700 px-3 py-1 text-sm rounded-lg hover:bg-blue-700 hover:text-white">
+            <a href="https://ieeexplore.ieee.org/abstract/document/10914454" className="border border-blue-700 text-blue-700 dark:border-blue-400 dark:text-blue-400 px-3 py-1 text-sm rounded-lg hover:bg-blue-700 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white">
               <i className='bx bx-link'></i> Source
             </a>
           </div>
         </div>
       </div>
+      </div>
 
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
-          <div className="bg-white rounded-lg shadow-lg max-w-4xl w-full p-6 relative">
+          <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg max-w-4xl w-full p-6 relative">
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-5 right-8 text-gray-500 hover:text-gray-700 text-xl"
+              className="absolute top-5 right-8 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-white text-xl"
             >
               &times;
             </button>
 
             {/* Modal Content */}
-            <h3 className="text-xl font-semibold mb-4 text-left">Citation</h3>
-            <div className="p-4 md:p-5 space-y-4 border-t">
-              <p className="text-sm text-left leading-relaxed font-mono whitespace-pre-wrap bg-gray-50 p-4 rounded">
+            <h3 className="text-xl font-semibold mb-4 text-left dark:text-white">Citation</h3>
+            <div className="p-4 md:p-5 space-y-4 border-t dark:border-slate-700">
+              <p className="text-sm text-left leading-relaxed font-mono whitespace-pre-wrap bg-gray-50 dark:bg-slate-800 dark:text-slate-200 p-4 rounded">
                 {`@INPROCEEDINGS{10914454,
   author={Monira, Serajum and Fiha, Nurun Nahar and Moazzam, Md. Golam and Anwar, Md. Musfique},
   booktitle={2025 4th International Conference on Robotics, Electrical and Signal Processing Techniques (ICREST)}, 
@@ -69,7 +71,7 @@ const Publications = () => {
             </div>
 
             {/* Modal Footer */}
-            <div className="flex justify-end p-2 md:p-3 border-t border-gray-200 rounded-b">
+            <div className="flex justify-end p-2 md:p-3 border-t border-gray-200 dark:border-slate-700 rounded-b">
               <button
                 onClick={closeModal}
                 type="button"

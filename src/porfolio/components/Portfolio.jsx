@@ -12,7 +12,7 @@ import Publications from "./publications/Publications";
 
 function Portfolio() {
     return (
-      <div>
+      <div className="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 min-h-screen transition-colors">
        <Header/>
        <Body/>
        <Experience/>

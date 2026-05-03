@@ -1,26 +1,41 @@
 import React from 'react';
 import "./Header.css";
 import { useState } from "react";
+import useTheme from "../../hooks/useTheme";
+
 function Header() {
   const [navbar, setNavbar] = useState(false);
+  const { theme, toggle } = useTheme();
+
+  const ThemeButton = ({ className = "" }) => (
+    <button
+      onClick={toggle}
+      aria-label="Toggle theme"
+      title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+      className={`p-2 rounded-md text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ${className}`}
+    >
+      <i className={`bx ${theme === 'dark' ? 'bx-sun' : 'bx-moon'} text-xl`}></i>
+    </button>
+  );
 
   return (
-    <nav className="w-full bg-slate-50 fixed z-50 left-0 right-0 top-0">
+    <nav className="w-full bg-slate-50 dark:bg-slate-900 dark:border-b dark:border-slate-800 fixed z-50 left-0 right-0 top-0 transition-colors">
       <section className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <div className="w-32 ml-16">
+          <div className="w-32 ml-16 dark:invert">
             <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="" />
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-1">
+            <ThemeButton />
             <button
-              className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+              className="p-2 text-gray-700 dark:text-slate-200 rounded-md outline-none focus:border-gray-400 focus:border"
               onClick={() => setNavbar(!navbar)}
             >
               {navbar ? (
-                <i class="uil uil-times"></i>
+                <i className="uil uil-times"></i>
               ) : (
-                <i class="bx bx-grid-alt"></i>
+                <i className="bx bx-grid-alt"></i>
               )}
             </button>
           </div>
@@ -33,7 +48,7 @@ function Header() {
             }`}
           >
             <ul
-              className={`items-center justify-center md:flex md:space-x-6 md:space-y-0 font-medium ${
+              className={`items-center justify-center md:flex md:space-x-6 md:space-y-0 font-medium text-slate-800 dark:text-slate-200 ${
                 navbar ? "grid grid-cols-3 gap-x-14" : "flex flex-row"
               }`}
             >
@@ -42,12 +57,12 @@ function Header() {
                   <i className="bx bx-home-alt font-semibold text-xl"></i>
                 </a>
               </li>
-             
-              
+
+
               <li className="p-2 list-none md:hidden">
                 <a href="#experience">
                   <i className="bx bxs-briefcase font-semibold text-xl"></i>
-                  
+
                 </a>
               </li>
               <li className="p-2 list-none md:hidden">
@@ -64,47 +79,50 @@ function Header() {
 
               <li className="p-2 list-none md:hidden">
                 <a href="#skills">
-               
-                <i class='bx bx-cog font-semibold text-xl'></i>
+
+                <i className='bx bx-cog font-semibold text-xl'></i>
                 </a>
               </li>
               <li className="p-2 list-none md:hidden">
                 <a href="#projects">
-                 
-                  <i class='bx bx-code-alt font-semibold text-xl'></i>
-                
+
+                  <i className='bx bx-code-alt font-semibold text-xl'></i>
+
                 </a>
               </li>
               <li className="p-2 list-none md:hidden">
                 <a href="#contact">
-                 <i class='bx bxs-paper-plane font-semibold text-xl'></i>
+                 <i className='bx bxs-paper-plane font-semibold text-xl'></i>
                 </a>
               </li>
 
-              <li className="p-2 list-none hidden md:block">
+              <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
                 <a href="#home">Home</a>
               </li>
 
-              <li className="p-2 list-none hidden md:block">
+              <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
                 <a href="#experience">Experience</a>
               </li>
 
-              <li className="p-2 list-none hidden md:block">
+              <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
                 <a href="#education">Education</a>
               </li>
 
-              <li className="p-2 list-none hidden md:block">
+              <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
                 <a href="#publications">Publications</a>
               </li>
 
-              <li className="p-2 list-none hidden md:block">
+              <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
                 <a href="#skills">Skills</a>
               </li>
-              <li className="p-2 list-none hidden md:block">
+              <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
                 <a href="#projects">Projects</a>
               </li>
-              <li className="p-2 list-none hidden md:block">
+              <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
                 <a href="#contact">Contact</a>
+              </li>
+              <li className="p-2 list-none hidden md:block">
+                <ThemeButton />
               </li>
             </ul>
           </div>
@@ -114,12 +132,3 @@ function Header() {
   );
 }
 export default Header;
-
-{
-  /* <i class='bx bx-home-alt'></i>
-<i class='bx bx-user'></i>
-<i class='bx bx-file'></i>
-<i class='bx bx-send'></i>
-<i class='bx bxs-graduation'></i>
-<i class='bx bxs-graduation'></i> */
-}

@@ -1,66 +1,104 @@
 import React from "react";
 
+const quickLinks = [
+  { label: "Home", href: "#home" },
+  { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Publications", href: "#publications" },
+  { label: "Contact", href: "#contact" },
+];
+
+const socials = [
+  { icon: "bx bxl-linkedin", href: "https://www.linkedin.com/in/nnfiha/", label: "LinkedIn" },
+  { icon: "bx bxl-github", href: "https://github.com/nn-fiha", label: "GitHub" },
+  { icon: "bx bxl-facebook", href: "https://www.facebook.com/nnfiha", label: "Facebook" },
+  { icon: "bx bxl-instagram", href: "https://www.instagram.com/nn_fiha/", label: "Instagram" },
+  { icon: "bx bxl-twitter", href: "https://twitter.com/nn_fiha", label: "Twitter" },
+];
+
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-slate-50 p-10 w-full">
-      <div>
-      
-        <div class=" w-28 p-2 inline-flex  justify-center">
-          <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="" />
-        </div>
-        <ul className="flex gap-6 justify-center p-4 text-sm ">
-          <li>
-            <a href="#about" className="text-slate-700 hover:text-slate-900">
-              About
-            </a>
-          </li>
-          <li>
+    <footer className="bg-slate-900 text-slate-300 w-full">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white text-xl font-bold">Nurun Nahar Fiha</h3>
+            <p className="mt-3 text-sm leading-relaxed text-slate-400 max-w-md">
+              SQA Engineer & CSE graduate from Jahangirnagar University. Passionate about
+              quality software, machine learning, and building products that work.
+            </p>
+            <p className="mt-4 text-xs text-slate-500 inline-flex items-center gap-1.5">
+              <i className="bx bx-map text-base"></i>
+              Dhaka, Bangladesh
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
+              Quick Links
+            </h4>
+            <ul className="space-y-2 text-sm">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-slate-400 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Get in touch */}
+          <div>
+            <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
+              Get in Touch
+            </h4>
             <a
-              href="#projects"
-              className="text-slate-700 hover:text-slate-900"
+              href="mailto:nnfiha2000@gmail.com"
+              className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors break-all"
             >
-              Projects
+              <i className="bx bx-envelope text-base shrink-0"></i>
+              nnfiha2000@gmail.com
             </a>
-          </li>
-          <li>
-            <a
-              href="#testimonial"
-              className="text-slate-700 hover:text-slate-900"
-            >
-              Testimonials
-            </a>
-          </li>
-        </ul>
-        <div className="flex gap-5 justify-center m-2 mb-12">
-          <a
-            href="https://www.facebook.com/nnfiha"
-            className="bg-slate-700 inline-flex rounded-lg text-white text-xl p-1 hover:bg-slate-800"
-          >
-            <i class="bx bxl-facebook"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/nn_fiha/"
-            className="bg-slate-700 inline-flex rounded-lg text-white text-xl p-1 hover:bg-slate-800"
-          >
-            <i class="bx bxl-instagram"></i>
-          </a>
-          <a
-            href="https://twitter.com/nn_fiha"
-            className="bg-slate-700 inline-flex rounded-lg text-white text-xl p-1 hover:bg-slate-800"
-          >
-            <i class="bx bxl-twitter"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/nnfiha/"
-            className="bg-slate-700 inline-flex rounded-lg text-white text-xl p-1 hover:bg-slate-800"
-          >
-            <i class="bx bxl-linkedin"></i>
-          </a>
+
+            <div className="flex gap-3 mt-5">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="w-9 h-9 inline-flex items-center justify-center rounded-md bg-slate-800 text-slate-300 hover:bg-white hover:text-slate-900 transition-colors"
+                >
+                  <i className={`${s.icon} text-lg`}></i>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <span className="text-xs text-gray-700 text-center">
-          &#169; Fiha. All rights reserved.
-        </span>
+        {/* Bottom bar */}
+        <div className="mt-10 pt-6 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-3">
+          <span className="text-xs text-slate-500">
+            &copy; {year} Nurun Nahar Fiha. All rights reserved.
+          </span>
+          <a
+            href="#home"
+            className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors"
+          >
+            Back to top <i className="bx bx-up-arrow-alt"></i>
+          </a>
+        </div>
       </div>
     </footer>
   );

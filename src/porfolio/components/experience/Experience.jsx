@@ -1,87 +1,102 @@
-import React from 'react';
-import Info from './Info'
+import React from 'react'
 
+const experiences = [
+  {
+    role: 'SQA Engineer',
+    company: 'Zelf Technologies Inc.',
+    companyUrl: 'https://www.hellozelf.com/',
+    location: 'Brooklyn, New York, USA',
+    period: 'Dec 2024 – Present',
+    current: true,
+    logo: process.env.PUBLIC_URL + '/images/zelflogo-Cv6SuQ3l.png',
+    bullets: [
+      'Conducted functional, regression, smoke, sanity, and user acceptance testing to ensure high-quality software delivery.',
+      'Investigated and analyzed issues to identify the root cause of bugs, ensuring faster resolution and preventing recurrence.',
+      'Reported, tracked, and managed bugs effectively using Jira, maintaining clear communication with the development team.',
+      'Developed and maintained detailed test cases to streamline testing processes and improve test coverage.',
+      'Worked cross-functionally with developers and stakeholders to align on project goals and ensure seamless delivery of features.',
+    ],
+  },
+  {
+    role: 'Junior SQA Engineer',
+    company: 'Dynamic Solution Innovators (DSi)',
+    companyUrl: 'https://www.dsinnovators.com/',
+    location: 'Mohakhali, Dhaka',
+    period: 'April 2024 – Dec 2024',
+    logo: 'https://www.openrefactory.com/wp-content/uploads/2020/01/DSI-Logo-1.png',
+    project: 'KeyPleaz — a USA-based app connecting Real Estate Agents instantly.',
+    bullets: [
+      'Conducted functional, regression, sanity, smoke, and user acceptance testing.',
+      'Reported and tracked bugs using Microsoft Azure Board.',
+      'Developed and managed test cases in Qase.',
+      'Assisted PM & BA with writing, reviewing, and providing feedback on user stories, coordinating with developers for project alignment.',
+    ],
+  },
+]
 
-
-function Experience (){
+const Experience = () => {
   return (
-    <section id='experience' className='p-8 mb-10 md:mb-20 ml-10 md:ml-60 md:w-[70%] align-middle'>
-       <h2 className='text-2xl font-bold text-center'>Work Experience</h2> 
-       <span className='text-xs text-gray-500 text-center'>Companies</span>
-      
-       <div className="">
-        {/* Zelf Technologies Experience */}
-      <div className='flex flex-col md:grid grid-cols-2 justify-between items-center gap-10 md:gap-20 mt-4'>
-        <div className='pt-5'>
-          <h3 className="text-xl font-semibold pb-2">SQA Engineer</h3>
-          <p className="text-sm text-gray-600">
-            Dec 2024 – Present | <span className="italic"><a href="https://www.hellozelf.com/" className='text-blue-600'>Zelf Technologies Inc.</a>, Brooklyn, New York, USA</span>
-          </p>
-          
-          <ul className="mt-4 list-disc text-sm text-gray-700 space-y-2 flex justify-center text-left">
-  <div className="list-inside">
-  <li>Conducted functional, regression, smoke, sanity, and user acceptance testing to ensure high-quality software delivery.</li>
-  <li>Investigated and analyzed issues to identify the root cause of bugs, ensuring faster resolution and preventing recurrence.</li>
-  <li>Reported, tracked, and managed bugs effectively using Jira board, maintaining clear communication with the development team.</li>
-  <li>Developed and maintained detailed test cases to streamline testing processes and improve test coverage.</li>
-  <li>Worked cross-functionally with developers and stakeholders to align on project goals and ensure seamless delivery of features.</li>
-  </div>
-</ul>
-        </div>
-        <div className=''>
-        <img src={process.env.PUBLIC_URL + '/images/zelflogo-Cv6SuQ3l.png'} alt=""/>
-        <p className="mt-6 text-gray-700 text-sm text-justify">Zelf enables brands navigate the ‘new norm’ where everyday consumers are shaping brand narratives & beginning their customer journey on video-based platforms via social listening, reporting, sentiment analysis & AI driven 1:1 engagement brand awareness campaigns.
+    <section id='experience' className='p-8 mb-10 md:mb-20'>
+      <h2 className='text-2xl font-bold text-center dark:text-white'>Work Experience</h2>
+      <span className='block text-xs text-gray-500 dark:text-slate-400 text-center mb-12'>Companies</span>
 
-          </p>
-        </div>
-        </div>
+      <div className='max-w-5xl mx-auto md:px-8'>
+        <div className='relative md:pl-10 md:before:content-[""] md:before:absolute md:before:left-2 md:before:top-2 md:before:bottom-2 md:before:w-0.5 md:before:bg-slate-200 md:dark:before:bg-slate-700'>
+          {experiences.map((exp, idx) => (
+            <div key={idx} className='relative mb-8 last:mb-0'>
+              <span className='hidden md:block absolute -left-[34px] top-6 w-3.5 h-3.5 rounded-full bg-slate-600 dark:bg-slate-400 ring-4 ring-white dark:ring-slate-950 shadow'></span>
 
-        {/* DSi Experience */}
-        <div className='flex flex-col md:grid grid-cols-2 justify-between items-center gap-10 md:gap-20 mt-10'>
-        {/* Zelf Technologies Experience */}
-        <div className='pt-5'>
-          
-        <h3 className="text-xl font-semibold pb-2">Junior SQA Engineer</h3>
-          <p className="text-sm text-gray-600">
-            April 2024 – Dec 2024 | <span className="italic"><a href="https://www.dsinnovators.com/" className='text-blue-600'>Dynamic Solution Innovators (DSi)</a>, Mohakhali, Dhaka</span>
-          </p>
-          
-          <ul className="mt-4 list-disc text-sm text-gray-700 space-y-2 flex justify-center text-left">
-  <div className="list-inside">
-    <li>Conducted functional, regression, sanity, smoke, and user acceptance testing.</li>
-    <li>Reported and tracked bugs using Microsoft Azure Board.</li>
-    <li>Developed and managed test cases in Qase.</li>
-    <li>
-      Assisted PM & BA with writing, reviewing, and providing feedback on user stories, coordinating with developers for project alignment.
-    </li>
-  </div>
-</ul>
-    </div>
-        <div className=''>
-        <img src= "https://www.openrefactory.com/wp-content/uploads/2020/01/DSI-Logo-1.png" alt="" className='h-20 p-0'/>
-        <p className="mt-6 text-gray-700 text-sm  text-justify">Dynamic Solution Innovators (DSi) is a provider of information technology solutions. It offers machine learning, big data environment, data science, Off Dock Management, software development, digital verification, enterprise resource solutions, and more.
-        <br/><strong>Project Name:</strong> KeyPleaz, a USA-based app connecting Real Estate Agents Instantly.
-          </p>
+              <div className='border-l-4 border-s-slate-600 dark:border-s-slate-400 bg-white dark:bg-slate-900 shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow text-left'>
+                <div className='flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4'>
+                  <div className='flex items-start gap-4 flex-1 min-w-0'>
+                    {exp.logo && (
+                      <div className='hidden sm:flex shrink-0 w-14 h-14 rounded-md bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 items-center justify-center p-2 overflow-hidden'>
+                        <img src={exp.logo} alt={exp.company} className='max-w-full max-h-full object-contain' />
+                      </div>
+                    )}
+                    <div className='min-w-0'>
+                      <h3 className='text-lg font-semibold dark:text-white leading-snug'>{exp.role}</h3>
+                      <p className='text-sm mt-1'>
+                        <a href={exp.companyUrl} target='_blank' rel='noopener noreferrer' className='text-blue-600 dark:text-blue-400 hover:underline font-medium'>
+                          {exp.company}
+                        </a>
+                        <span className='text-gray-600 dark:text-slate-400'> · {exp.location}</span>
+                      </p>
+                    </div>
+                  </div>
+                  <span className='inline-flex self-start items-center gap-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap'>
+                    <i className='bx bx-calendar'></i>
+                    {exp.period}
+                    {exp.current && (
+                      <span className='ml-1 inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-400'>
+                        <span className='w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse'></span>
+                      </span>
+                    )}
+                  </span>
+                </div>
+
+                <ul className='space-y-2 text-sm text-gray-700 dark:text-slate-300'>
+                  {exp.bullets.map((b, i) => (
+                    <li key={i} className='flex gap-2'>
+                      <i className='bx bx-check text-base text-slate-500 dark:text-slate-400 mt-0.5 shrink-0'></i>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {exp.project && (
+                  <p className='mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 text-sm text-gray-700 dark:text-slate-400'>
+                    <span className='font-semibold text-slate-700 dark:text-slate-200'>Key Project: </span>
+                    {exp.project}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
-        </div>
-    
-       
       </div>
-
     </section>
   )
 }
 
-export default Experience;
-
- {/* <div className='flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 mt-10'>
-        <div className='h-80'>
-        <img src={process.env.PUBLIC_URL + '/images/fiha about.jpg'} alt="" className='w-68 h-full rounded-2xl justify-center '/>
-        </div>
-        <div className='w-auto md:w-[490px] px-3 md:px-0'>
-            <Info/>
-            <p className='my-5 p-6 md:p-2 text-justify text-gray-700 text-sm'>During my four years long graduation period, I have completed several projects on different languages and frameworks. In this period, I have developed several web applications that utilized Django, MySQL, Nodejs, Expressjs, Reactjs, MongoDB. These gave me hands-on experience in building scalable and efficient applications and also involved database design, server-side logic, and RESTful APIs.
-            </p>
-            <a download="" href={CV}><button className='text-white bg-slate-700 border-none px-4 py-2 font-medium transition-all rounded-md hover:bg-slate-600'> Download CV <i class="uil uil-file-download-alt text-xl"></i></button></a>
-        </div>
-       </div> */}
+export default Experience
