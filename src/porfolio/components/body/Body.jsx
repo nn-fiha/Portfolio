@@ -39,7 +39,7 @@ function Data({ name }) {
 
 function Social() {
     return (
-        <div className='flex flex-col gap-8 mt-10 md:mt-[120px] ml-[8%] md:ml-[13%]'>
+        <div className='flex flex-col gap-4 md:gap-8 mt-10 md:mt-[120px] ml-[8%] md:ml-[13%]'>
             <a href="https://www.instagram.com/nn_fiha/" className='icon'><i className="uil uil-instagram"></i></a>
             <a href="https://twitter.com/nn_fiha" className='icon'><i className="uil uil-twitter"></i></a>
             <a href="https://www.linkedin.com/in/nnfiha/" className='icon'><i className="uil uil-linkedin-alt"></i></a>
