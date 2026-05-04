@@ -19,7 +19,6 @@ const skillCategories = [
     skills: [
       { name: 'Node JS', img: 'nodejs.png', level: 'Intermediate' },
       { name: 'Django', img: 'django.png', level: 'Intermediate' },
-      { name: 'Java', img: 'java.png', level: 'Intermediate' },
       { name: 'Python', img: 'python.png', level: 'Intermediate' },
       { name: 'REST API', img: 'restapi.png', level: 'Intermediate' },
       { name: 'MySQL', img: 'mysql.png', level: 'Intermediate' },

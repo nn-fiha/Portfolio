@@ -15,18 +15,6 @@ const educationItems = [
     grade: { label: 'CGPA', value: '3.69/4.00' },
     thesis: 'Deep Learning Based Bangladeshi Currency Coin Recognition.',
   },
-  {
-    period: '2016 - 2018',
-    degree: 'HSC in Science',
-    institution: 'Dr. Mahbubur Rahman Mollah College, Dhaka.',
-    grade: { label: 'GPA', value: '5.00/5.00 (A+)' },
-  },
-  {
-    period: '2014 - 2016',
-    degree: 'SSC in Science',
-    institution: 'Sheikhdi A. M. High School, Jatrabari, Dhaka.',
-    grade: { label: 'GPA', value: '5.00/5.00 (A+)' },
-  },
 ]
 
 const Education = () => {
