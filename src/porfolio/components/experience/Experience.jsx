@@ -47,10 +47,10 @@ const Experience = () => {
               <span className='hidden md:block absolute -left-[34px] top-6 w-3.5 h-3.5 rounded-full bg-slate-600 dark:bg-slate-400 ring-4 ring-white dark:ring-slate-950 shadow'></span>
 
               <div className='border-l-4 border-s-slate-600 dark:border-s-slate-400 bg-white dark:bg-slate-900 shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow text-left'>
-                <div className='flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4'>
+                <div className='flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4'>
                   <div className='flex items-start gap-4 flex-1 min-w-0'>
                     {exp.logo && (
-                      <div className='hidden sm:flex shrink-0 w-14 h-14 rounded-md bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 items-center justify-center p-2 overflow-hidden'>
+                      <div className='hidden md:flex shrink-0 w-14 h-14 rounded-md bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 items-center justify-center p-2 overflow-hidden'>
                         <img src={exp.logo} alt={exp.company} className='max-w-full max-h-full object-contain' />
                       </div>
                     )}
